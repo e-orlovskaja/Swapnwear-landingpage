@@ -5,26 +5,28 @@ import SwipableCard from '../components/SwipableCard';
 export default function Index() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-swap-cream via-orange-100/30 to-swap-cream overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center">
-        <div className="container mx-auto px-4 pt-16 md:pt-20 lg:pt-24">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      {/* Hero Section - Much Higher Positioning */}
+      <section className="relative min-h-screen flex items-start pt-4 md:pt-6 lg:pt-8">
+        <div className="container mx-auto px-4 pt-2 md:pt-4 lg:pt-6">
+          <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-start">
             {/* Left Side - Content */}
-            <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
-              {/* Logo */}
-              <div className="space-y-4 lg:space-y-6">
+            <div className="space-y-3 lg:space-y-4 text-center lg:text-left">
+              {/* Logo and Tagline */}
+              <div className="space-y-2 lg:space-y-3">
                 <img
-                  src="/swap'n wear (2).png"
+                  src="/logo.png"
                   alt="Swap'n Wear logo"
                   className="w-64 sm:w-72 lg:w-96 h-auto mx-auto lg:mx-0"
                 />
 
-                {/* Tagline */}
-                <h2 className="font-belanosima font-semibold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
+                <h1 className="font-belanosima font-semibold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
                   <span className="text-swap-text-dark">A clothing swap app – no reselling, just </span>
                   <span className="text-swap-green underline decoration-swap-green decoration-2">pure trading.</span>
-                </h2>
+                </h1>
               </div>
+
+              {/* Spacer for better balance */}
+              <div className="h-6 sm:h-8 lg:h-10" />
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto lg:mx-0">
@@ -38,8 +40,10 @@ export default function Index() {
             </div>
 
             {/* Right Side - App Mockup */}
-            <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
-              <SwipableCard className="mb-16" />
+            <div className="relative flex justify-center lg:justify-center xl:justify-start xl:ml-36 mt-4 lg:mt-0">
+              <div className="scale-75 lg:scale-85 xl:scale-90">
+                <SwipableCard className="mb-8" />
+              </div>
             </div>
           </div>
         </div>
@@ -94,44 +98,224 @@ export default function Index() {
       <section className="py-20 lg:py-32 relative bg-gradient-to-b from-swap-cream via-green-100/20 to-swap-cream">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
-            <h2 className="font-belanosima text-4xl lg:text-5xl text-swap-text-dark">
+            <h2 className="font-belanosima text-4xl lg:text-5xl text-swap-text-dark pb-20">
               How the app works?
             </h2>
           </div>
 
           <div className="space-y-24 lg:space-y-32">
             {/* Step 1: Post */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div className="lg:order-2 space-y-6">
-                <h3 className="font-belanosima text-3xl lg:text-4xl text-swap-text-dark">#1 Post</h3>
-                <p className="font-instrument text-xl lg:text-2xl text-swap-text-dark leading-relaxed">
-                  Swap'n Wear helps you declutter your closet and find new styles without buying new. Upload photos of clothes you want to trade.
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative">
+              {/* Left side - Content */}
+              <div className="space-y-6 pb-20">
+                <h3 className="font-belanosima text-3xl lg:text-4xl text-swap-text-dark text-center">#1 Post</h3>
+                <p className="font-instrument text-xl lg:text-2xl text-swap-text-dark leading-relaxed pl-20">
+                  Upload photos of clothes you want to trade. Set your preferences and let others discover your style.
                 </p>
-                <button className="bg-swap-green text-swap-beige font-medium px-6 py-3 rounded-xl transform -rotate-3 hover:rotate-0 transition-transform flex items-center gap-2">
-                  <Plus className="w-5 h-5" />
-                  Add New Item
-                </button>
-              </div>
-              <div className="lg:order-1 relative">
-                <div className="bg-white rounded-3xl shadow-xl p-4 transform rotate-3 max-w-sm mx-auto">
+              </div> 
+
+              {/* Right side - Card with all elements */}
+              <div className="relative">
+                {/* Add New Item Button */}
+                <div 
+                  className="absolute z-20"
+                  style={{
+                    top: '-100px',
+                    right: '300px',
+                    transform: 'rotate(-3deg)'
+                  }}
+                >
+                  <div
+                    style={{
+                      position: 'relative',
+                      width: '256px',
+                      height: '46px',
+                      background: '#6E8F56',
+                      borderRadius: '13px',
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}
+                  >
+                    {/* Plus Icon */}
+                    <Plus 
+                      style={{
+                        position: 'absolute',
+                        left: '30px',
+                        width: '24px',
+                        height: '24px',
+                        color: '#FFFDF5',
+                        strokeWidth: '2px'
+                      }}
+                    />
+                    {/* Text */}
+                    <span
+                      style={{
+                        position: 'absolute',
+                        left: '80px',
+                        fontFamily: 'Poppins',
+                        fontStyle: 'normal',
+                        fontWeight: '500',
+                        fontSize: '15px',
+                        lineHeight: '22px',
+                        color: '#F6F4F0'
+                      }}
+                    >
+                      Add New Item
+                    </span>
+                  </div>
+                </div>
+
+                {/* Card with rotation */}
+                <div 
+                  className="relative bg-white mx-auto"
+                  style={{
+                    width: '234px',
+                    height: '313px',
+                    background: '#FFFEFE',
+                    boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.09)',
+                    borderRadius: '25px',
+                    transform: 'rotate(8deg)',
+                    marginLeft: '200px'
+                  }}
+                >
+                  {/* Active badge */}
+                  <div 
+                    className="absolute z-10"
+                    style={{
+                      width: '59px',
+                      height: '24px',
+                      left: '16px',
+                      top: '12px',
+                      background: '#32C864',
+                      borderRadius: '12px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <span 
+                      style={{
+                        fontFamily: 'Inter',
+                        fontStyle: 'normal',
+                        fontWeight: '500',
+                        fontSize: '11px',
+                        lineHeight: '13px',
+                        color: '#F5F5F5'
+                      }}
+                    >
+                      Active
+                    </span>
+                  </div>
+
+                  {/* Image */}
                   <img 
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/ee88d8a05e782211e222f60459ff3f2c57d1d094?width=468" 
-                    alt="Leather sandals" 
-                    className="w-full h-48 object-cover rounded-2xl mb-3"
+                    src="/images/sandals.png"
+                    alt="Leather sandals"
+                    style={{
+                      width: '234px',
+                      height: '206px',
+                      borderRadius: '25px 25px 0px 0px',
+                      objectFit: 'cover'
+                    }}
                   />
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-start">
-                      <h4 className="font-inter font-medium text-swap-text-dark">Leather sandals</h4>
-                      <span className="bg-swap-active text-white text-xs px-2 py-1 rounded-xl">Active</span>
+                  
+                  {/* Content area */}
+                  <div style={{ padding: '16px', position: 'relative' }}>
+                    {/* Title */}
+                    <h4 
+                      style={{
+                        fontFamily: 'Inter',
+                        fontStyle: 'normal',
+                        fontWeight: '500',
+                        fontSize: '16px',
+                        lineHeight: '19px',
+                        color: '#222B22',
+                        marginBottom: '4px'
+                      }}
+                    >
+                      Leather sandals
+                    </h4>
+                    
+                    {/* Size and condition */}
+                    <div className="flex gap-2 items-center" style={{ marginBottom: '12px' }}>
+                      <span 
+                        style={{
+                          fontFamily: 'Inter',
+                          fontStyle: 'normal',
+                          fontWeight: '500',
+                          fontSize: '10px',
+                          lineHeight: '12px',
+                          color: '#758A75'
+                        }}
+                      >
+                        Size 39
+                      </span>
+                      <span 
+                        style={{
+                          fontFamily: 'Inter',
+                          fontStyle: 'normal',
+                          fontWeight: '500',
+                          fontSize: '10px',
+                          lineHeight: '12px',
+                          color: '#758A75'
+                        }}
+                      >
+                        Good
+                      </span>
                     </div>
-                    <div className="flex gap-2 text-xs text-swap-text-gray">
-                      <span>Size 39</span>
-                      <span>•</span>
-                      <span>Good</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <button className="bg-swap-light-beige text-swap-text-dark text-xs px-3 py-2 rounded-xl">Edit</button>
-                      <button className="text-swap-red text-xs">Delete</button>
+                    
+                    {/* Buttons */}
+                    <div className="flex gap-2">
+                      <button 
+                        style={{
+                          width: '101px',
+                          height: '30px',
+                          background: '#F0EFED',
+                          borderRadius: '12px',
+                          border: 'none',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
+                        }}
+                      >
+                        <span
+                          style={{
+                            fontFamily: 'Inter',
+                            fontStyle: 'normal',
+                            fontWeight: '500',
+                            fontSize: '11px',
+                            lineHeight: '13px',
+                            color: '#222B22'
+                          }}
+                        >
+                          Edit
+                        </span>
+                      </button>
+                      <button 
+                        style={{
+                          width: '101px',
+                          height: '30px',
+                          background: 'transparent',
+                          borderRadius: '12px',
+                          border: 'none',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
+                        }}
+                      >
+                        <span
+                          style={{
+                            fontFamily: 'Inter',
+                            fontStyle: 'normal',
+                            fontWeight: '500',
+                            fontSize: '11px',
+                            lineHeight: '13px',
+                            color: '#D73333'
+                          }}
+                        >
+                          Delete
+                        </span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -143,7 +327,7 @@ export default function Index() {
               <div className="space-y-6">
                 <h3 className="font-belanosima text-3xl lg:text-4xl text-swap-text-dark">#2 Swipe</h3>
                 <p className="font-instrument text-xl lg:text-2xl text-swap-text-dark leading-relaxed">
-                  Swap'n Wear helps you declutter your closet and find new styles without buying new. Browse through other users' items.
+                  Browse through other users' items. Swipe right on pieces you love, left on those you don't.
                 </p>
               </div>
               <div className="relative">
@@ -173,20 +357,20 @@ export default function Index() {
                   <div className="relative bg-white rounded-3xl shadow-xl p-4 z-10">
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets%2Fdc1ef5848ba8400292dccd16da94774e%2F951be603f9ca4b30b1f1c8fddab0a5cd?format=webp&width=800"
-                      alt="Leather sandals"
+                      alt="Corduroy trousers"
                       className="w-full h-48 object-cover rounded-2xl mb-3"
                     />
                     <div className="space-y-2">
                       <div className="flex justify-between items-start">
-                        <h4 className="font-inter text-sm font-medium text-swap-text-dark">Leather sandals</h4>
+                        <h4 className="font-inter text-sm font-medium text-swap-text-dark">Corduroy trousers</h4>
                         <div className="bg-swap-light-green rounded-full w-6 h-6 flex items-center justify-center">
-                          <span className="text-swap-green text-xs">39</span>
+                          <span className="text-swap-green text-xs">Fair</span>
                         </div>
                       </div>
-                      <p className="text-xs text-swap-text-gray">Gently used leather sandals in great condition...</p>
+                      <p className="text-xs text-swap-text-gray">Unisex corduroy trousers. Thrifted in Berlin, in a fair co...</p>
                       <div className="space-y-1">
-                        <p className="text-xs text-swap-text-gray font-semibold">Condition: Good</p>
-                        <p className="text-xs text-swap-text-dark">by Anna</p>
+                        <p className="text-xs text-swap-text-gray font-semibold">Condition: Fair</p>
+                        <p className="text-xs text-swap-text-dark">by Kate</p>
                       </div>
                     </div>
                   </div>
@@ -209,7 +393,7 @@ export default function Index() {
               <div className="lg:order-2 space-y-6">
                 <h3 className="font-belanosima text-3xl lg:text-4xl text-swap-text-dark">#3 Match</h3>
                 <p className="font-instrument text-xl lg:text-2xl text-swap-text-dark leading-relaxed">
-                  Swap'n Wear helps you declutter your closet and find new styles without buying new. When you both like each other's items, it's a match!
+                  When you both like each other's items, it's a match! Now you can start planning your swap.
                 </p>
               </div>
               <div className="lg:order-1 relative">
@@ -243,7 +427,7 @@ export default function Index() {
               <div className="space-y-6">
                 <h3 className="font-belanosima text-3xl lg:text-4xl text-swap-text-dark">#4 Swap</h3>
                 <p className="font-instrument text-xl lg:text-2xl text-swap-text-dark leading-relaxed">
-                  Swap'n Wear helps you declutter your closet and find new styles without buying new. Chat, meet up, and make the swap!
+                  Chat, meet up, and make the swap! Coordinate the exchange and enjoy your new-to-you piece.
                 </p>
               </div>
               <div className="relative">
