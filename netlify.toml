@@ -3,6 +3,8 @@
   functions = "netlify/functions"
   publish = "dist/spa"
 
+trailingSlash = "never"
+
 
 [functions]
   external_node_modules = ["express"]
