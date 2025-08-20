@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, X, MessageCircle, Plus, ArrowLeft, ArrowRight, MousePointerClick, Leaf, PiggyBank, Users, Smile, Menu } from 'lucide-react';
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Index() {
   // Product carousel animation state (appearance + motion)
