@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap to help search engines discover the preferred URLs
+Sitemap: https://swapnwear.nl/sitemap.xml
