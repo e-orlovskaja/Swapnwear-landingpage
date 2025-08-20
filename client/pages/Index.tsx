@@ -1,6 +1,7 @@
 import React from 'react';
 import { Heart, X, MessageCircle, Plus, ArrowLeft, ArrowRight, MousePointerClick, Leaf, PiggyBank, Users, Smile, Menu } from 'lucide-react';
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 export default function Index() {
   // Product carousel animation state (appearance + motion)
@@ -657,6 +658,7 @@ export default function Index() {
           </p>
         </div>
       </footer>
+      <SpeedInsights/>
       <Analytics />
     </div>
   );
